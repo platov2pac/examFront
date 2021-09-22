@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: url("./images/seamless-vector-pattern-open-closed-books-notebooks-seamless-pattern-open-closed-books-vector-background-139002429.jpg");
+  height: 100%;
+  margin:0;
+}
+html{
+  height: 100%;
+  margin: 0;
+}
