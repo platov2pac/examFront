@@ -1,0 +1,14 @@
+/*.footer {*/
+/*  height: 10vh;*/
+/*  position: sticky;*/
+/*  bottom: 0;*/
+/*  background: blanchedalmond;*/
+/*}*/
+app-footer{
+  /*height: 10vh;*/
+  /*position: sticky;*/
+  /*bottom: 0;*/
+  /*background: blanchedalmond;*/
+  position: sticky;
+  bottom: 0;
+}

@@ -1,0 +1,11 @@
+/*.header {*/
+/*  height: 10vh;*/
+/*  flex: 0 0 auto;*/
+/*  background-color: #dcdcdc;*/
+/*}*/
+app-header{
+  height: 10vh;
+  background: #8A427A;
+  position: sticky;
+  top: 0;
+}

@@ -1,12 +1,32 @@
 <div class="main">
   <div class="login">
-    <div class="p-grid p-fluid">
-      <div class="p-col-12 p-md-4">
-        <div class="p-inputgroup">
-          <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-          <input type="text" pInputText placeholder="Username">
+    <div class="login-text" style="font-family: Arial, sans-serif; font-size: 5vh">
+      <p>Авторизация</p>
+    </div>
+    <div *ngIf="error">
+      <p-message severity="error" text="{{message}}"></p-message>
+    </div>
+    <div class="form">
+      <div class="p-grid p-fluid">
+        <div class="p-col-12 p-md-4">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input type="text" class="p-inputtext-lg" pInputText placeholder="Логин" [(ngModel)]="login">
+          </div>
+        </div>
+      </div>
+      <div class="p-grid p-fluid">
+        <div class="p-col-12 p-md-4">
+          <div class="p-inputgroup">
+            <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+            <input type="password" class="p-inputtext-lg" pInputText placeholder="Пароль" [(ngModel)]="password">
+          </div>
         </div>
       </div>
     </div>
+    <div class="login-button">
+      <p-button (click)="sendAuth()" label="Войти" [loading]="loading[3]" (onClick)="load(3)"></p-button>
+    </div>
+
   </div>
 </div>

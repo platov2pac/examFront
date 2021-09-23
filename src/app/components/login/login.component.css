@@ -10,5 +10,61 @@
   display: flex;
   height: 50vh;
   width: 50vh;
-  background: aliceblue;
+  background: blanchedalmond;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-inputgroup {
+  width: 45vh;
+  margin: 1vh 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 15vh;
+  flex-grow:2;
+  flex-shrink: 1;
+  justify-content: center;
+
+}
+
+:host ::ng-deep .p-button {
+  height: 5vh;
+  width: 10vh;
+  background: #9e4e45 !important;
+  border: 1px solid #9e4e45 !important;
+  margin: 0;
+}
+
+:host ::ng-deep .p-button:hover {
+  height: 5vh;
+  width: 10vh;
+  background: #70332c !important;
+  border: 1px solid #70332c !important;
+
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.login-text{
+  flex-basis: 3vh;
+  flex-grow: 1;
+}
+
+:host ::ng-deep .p-message-custom {
+  background-color: #E1CFE7;
+  border: solid #8A427A;
+  border-width: 0 0 0 6px;
+  color: #2c1e30;
+}
+
+:host ::ng-deep .p-message-close-icon {
+  color: #2c1e30;
 }
