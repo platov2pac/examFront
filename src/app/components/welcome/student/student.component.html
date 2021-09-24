@@ -1,0 +1,20 @@
+<div class="exam-form">
+  <div class="question-and-send">
+    <div class="p-grid p-fluid" style="width: 65vw">
+      <div class="p-col-12 p-md-4">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-question"></i></span>
+          <input type="text" class="p-inputtext-lg" pInputText placeholder="Вопрос" disabled
+                 value="{{examQuestion}}">
+        </div>
+      </div>
+    </div>
+    <div class="send-button">
+      <p-button (click)="sendQuestion()" label="Отправить" [loading]="loading[3]" (onClick)="load(3)" [disabled]="questionAnswered"
+      ></p-button>
+    </div>
+  </div>
+  <textarea rows="10" cols="65vw"
+            style="max-height: 75vh; max-width: 70vw;height: 75vh;width: 70vw"
+            pInputTextarea [(ngModel)]="answer" [attr.disabled]="questionAnswered ? 'true':null"></textarea>
+</div>

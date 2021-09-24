@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <div class="content">
+    <div *ngIf="users.length===0; then thenBlock else elseBlock"></div>
+
+    <ng-template #thenBlock>
+      <p style="font-family: Arial, sans-serif; font-size: 40pt">Экзамен еще идет</p><i class="pi pi-spin pi-spinner"
+                                                                                        style="font-size: 2rem"></i>
+    </ng-template>
+    <ng-template #elseBlock>
+      <div class="entered-table">
+        <p-table [value]="users" [scrollable]="true" scrollHeight="70vh">
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="width:20vw">Логин</th>
+              <th style="width:20vw">ФИО</th>
+              <th style="width:20vw">Факультет</th>
+              <th style="width:20vw">Оценка</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-user>
+            <tr>
+              <td style="width:20vw">{{user.login}}</td>
+              <td style="width:20vw">{{user.fullName}}</td>
+              <td style="width:20vw">{{user.faculty.name}}</td>
+              <td style="width:20vw">10</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </ng-template>
+  </div>
+
+  <app-footer></app-footer>
+</div>

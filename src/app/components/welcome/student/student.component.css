@@ -1,0 +1,17 @@
+.question-and-send {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+:host ::ng-deep .p-button {
+  height: 5vh;
+  background: #9e4e45 !important;
+  border: 1px solid #9e4e45 !important;
+  margin: 0;
+}
+
+:host ::ng-deep .p-button:hover {
+  background: #70332c !important;
+  border: 1px solid #70332c !important;
+}

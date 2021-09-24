@@ -1,0 +1,21 @@
+<div class="answered-table">
+  <p-table [value]="users" [scrollable]="true" selectionMode="single" [(selection)]="selectedUser" scrollHeight="70vh">
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width:20vw">Логин</th>
+        <th style="width:20vw">ФИО</th>
+        <th style="width:20vw">Факультет</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr [pSelectableRow]="user" (click)="getUserAnswer()">
+        <td style="width:20vw">{{user.login}}</td>
+        <td style="width:20vw">{{user.fullName}}</td>
+        <td style="width:20vw">{{user.faculty.name}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<div class="finish-button" *ngIf="users.length===0">
+  <p-button  label="Завершить экзамен" [loading]="loading[3]" (onClick)="load(3)"></p-button>
+</div>

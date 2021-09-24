@@ -1,11 +1,9 @@
-/*.header {*/
-/*  height: 10vh;*/
-/*  flex: 0 0 auto;*/
-/*  background-color: #dcdcdc;*/
-/*}*/
-app-header{
+.header {
+  width: 70vw;
   height: 10vh;
-  background: #8A427A;
-  position: sticky;
-  top: 0;
+  flex-grow: 2;
+  background-color: #dcdcdc;
+}
+app-header{
+
 }
