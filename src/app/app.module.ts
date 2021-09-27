@@ -23,8 +23,11 @@ import { EnteredTableComponent } from './components/entered-table/entered-table.
 import {TableModule} from "primeng/table";
 import { StudentComponent } from './components/welcome/student/student.component';
 import { ProfessorComponent } from './components/welcome/professor/professor.component';
-import { AsnwerGradComponent } from './components/asnwer-grad/asnwer-grad.component';
-import {DynamicDialogModule} from 'primeng/dynamicdialog';
+import { AsnwerGradComponent } from './components/answer-grad/asnwer-grad.component';
+import {PanelModule} from "primeng/panel";
+import {ScrollPanelModule} from "primeng/scrollpanel";
+import {RatingModule} from "primeng/rating";
+import {InputNumberModule} from "primeng/inputnumber";
 
 
 
@@ -56,7 +59,11 @@ import {DynamicDialogModule} from 'primeng/dynamicdialog';
     MessagesModule,
     MessageModule,
     InputTextareaModule,
-    TableModule
+    TableModule,
+    PanelModule,
+    ScrollPanelModule,
+    RatingModule,
+    InputNumberModule
   ],
   providers: [UserService,ExamService, {
     provide: HTTP_INTERCEPTORS,

@@ -3,4 +3,5 @@
   height: 10vh;
   background: blanchedalmond;
   flex-grow: 2;
+  border-top: solid 1px #a4493c;
 }

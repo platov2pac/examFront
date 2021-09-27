@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ExamService} from "../../../services/exam.service";
 import {Router} from "@angular/router";
 import {HttpErrorResponse} from "@angular/common/http";
@@ -32,7 +32,7 @@ export class StudentComponent implements OnInit {
 
   ngOnInit(): void {
     this.role = localStorage.getItem("roleName");
-    this.examService.getExamQuestion().subscribe(exam => {
+    this.examService.getExam().subscribe(exam => {
       this.examQuestion = exam.question;
       this.examService.getAnswerForStudent().subscribe(answer => {
           this.questionAnswered = answer.answered

@@ -25,6 +25,9 @@ export class UserService {
     return this.http.get<User[]>("http://localhost:8080/professor/answeredList");
   }
 
+  getNotAnsweredUsers(): Observable<User[]>{
+    return this.http.get<User[]>("http://localhost:8080/professor/notAnsweredList")
+  }
   constructor(private http: HttpClient) {
   }
 }

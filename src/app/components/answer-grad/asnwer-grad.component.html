@@ -1,0 +1,18 @@
+<p-panel header="{{question}}">
+  <p-scrollPanel [style]="{width: '100%', height: '30vh'}">
+    <p *ngIf="answer">{{answer.value}}</p>
+  </p-scrollPanel>
+  <ng-template pTemplate="footer">
+    <div class="rating">
+      <p>Оценка: </p>
+      <div class="grade">
+        <p-inputNumber [(ngModel)]="grade" [showButtons]="true" buttonLayout="horizontal"
+                       decrementButtonClass="p-button-secondary" incrementButtonClass="p-button-secondary"
+                       incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus" [min]="1" [max]="10">
+        </p-inputNumber>
+      </div>
+      <!--      <p-rating [(ngModel)]="grade" [stars]="10" [cancel]="false"></p-rating>-->
+      <p-button (click)="setGrade(student.id,grade)" label="Оценить"></p-button>
+    </div>
+  </ng-template>
+</p-panel>

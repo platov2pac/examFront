@@ -9,8 +9,8 @@ import {Answer} from "../response/answer";
 })
 export class ExamService {
 
-  getExamQuestion(): Observable<Exam> {
-    return this.http.get<Exam>("http://localhost:8080/student/getExam");
+  getExam(): Observable<Exam> {
+    return this.http.get<Exam>("http://localhost:8080/getExam");
   }
 
   getAnswerForStudent(): Observable<Answer> {
@@ -24,9 +24,22 @@ export class ExamService {
     return this.http.post<any>("http://localhost:8080/student/setAnswer", body);
   }
 
-  getAnswer(id: number): Observable<Answer> {
+  getAnswerById(id: number): Observable<Answer> {
     const params = new HttpParams().set('id', id);
     return this.http.get<Answer>("http://localhost:8080/professor/getAnswer", {params});
+  }
+
+  setGrade(userId: number, grade: number) {
+    const body = {
+      "userId": userId,
+      "grade": grade
+    }
+    return this.http.post("http://localhost:8080/professor/setGrade", body);
+  }
+
+  finishExam() {
+    // @ts-ignore
+    return this.http.post("http://localhost:8080/professor/finishExam");
   }
 
   constructor(private http: HttpClient) {

@@ -1,0 +1,23 @@
+.rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.grade {
+  margin: 0 10px;
+}
+
+p {
+}
+
+:host ::ng-deep .p-rating-icon.pi-star:before {
+  color: #9e4e45;
+}
+
+:host ::ng-deep .p-rating {
+  margin: 0 10px;
+}
+
+

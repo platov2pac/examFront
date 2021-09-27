@@ -31,22 +31,6 @@
 
 }
 
-:host ::ng-deep .p-button {
-  height: 5vh;
-  width: 10vh;
-  background: #9e4e45 !important;
-  border: 1px solid #9e4e45 !important;
-  margin: 0;
-}
-
-:host ::ng-deep .p-button:hover {
-  height: 5vh;
-  width: 10vh;
-  background: #70332c !important;
-  border: 1px solid #70332c !important;
-
-}
-
 .login-button {
   display: flex;
   justify-content: center;
