@@ -25,9 +25,25 @@ export class UserService {
     return this.http.get<User[]>("http://localhost:8080/professor/answeredList");
   }
 
-  getNotAnsweredUsers(): Observable<User[]>{
+  getNotAnsweredUsers(): Observable<User[]> {
     return this.http.get<User[]>("http://localhost:8080/professor/notAnsweredList")
   }
+
+  getProfessors(): Observable<User[]> {
+    return this.http.get<User[]>("http://localhost:8080/admin/getProfessors")
+  }
+
+  addProfessor(professor: User) {
+    return this.http.post("http://localhost:8080/admin/addProfessor", professor);
+  }
+
+  updateProfessor(professor: User, oldLogin: string) {
+    const params = new HttpParams().set(
+      "oldLogin", oldLogin
+    )
+   return  this.http.post("http://localhost:8080/admin/updateUser", professor, {params});
+  }
+
   constructor(private http: HttpClient) {
   }
 }

@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <app-header></app-header>
+  <div class="content">
+    <p-table [value]="exams" dataKey="id" editMode="row" responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Факультет</th>
+          <th>Дата</th>
+          <th>Вопрос</th>
+          <th style="width:8rem">Действия</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-exam let-editing="editing" let-ri="rowIndex">
+        <tr [pEditableRow]="exam">
+          <td>
+            {{displayFaculty(exam.idFaculty)}}
+          </td>
+          <td>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input pInputText type="date" [(ngModel)]="exam.examDate" required>
+              </ng-template>
+              <ng-template pTemplate="output">
+                {{exam.examDate}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td>
+            <p-cellEditor>
+              <ng-template pTemplate="input">
+                <input pInputText type="text" [(ngModel)]="exam.question" required>
+              </ng-template>
+              <ng-template pTemplate="output">
+                {{exam.question}}
+              </ng-template>
+            </p-cellEditor>
+          </td>
+          <td style="text-align:center">
+            <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil"
+                    (click)="onRowEditInit(exam)" class="p-button-rounded p-button-text"></button>
+            <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check"
+                    (click)="onRowEditSave(exam)"
+                    class="p-button-rounded p-button-text p-button-success p-mr-2"></button>
+            <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times"
+                    (click)="onRowEditCancel(exam, ri)"
+                    class="p-button-rounded p-button-text p-button-danger"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <app-footer></app-footer>
+</div>

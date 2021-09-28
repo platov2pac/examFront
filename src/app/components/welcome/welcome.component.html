@@ -1,8 +1,18 @@
 <div class="wrapper">
   <app-header></app-header>
   <div class="content">
-    <app-student *ngIf="role==='ROLE_STUDENT'"></app-student>
-    <app-professor *ngIf="role==='ROLE_PROFESSOR'"></app-professor>
+    <div *ngIf="!examStart; then thenBlock else elseBlock"></div>
+
+    <ng-template #thenBlock>
+      <p style="font-family: Arial, sans-serif; font-size: 40pt">Экзамен еще не начинался</p><i
+      class="pi pi-spin pi-spinner"
+      style="font-size: 2rem"></i>
+    </ng-template>
+    <ng-template #elseBlock>
+      <app-student *ngIf="role==='ROLE_STUDENT'"></app-student>
+      <app-professor *ngIf="role==='ROLE_PROFESSOR'"></app-professor>
+    </ng-template>
+    <app-admin *ngIf="role==='ROLE_ADMIN'"></app-admin>
   </div>
   <app-footer></app-footer>
 </div>

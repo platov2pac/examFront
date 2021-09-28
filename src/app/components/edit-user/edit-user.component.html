@@ -1,0 +1,19 @@
+<form [formGroup]="editForm" (ngSubmit)="submit(editForm.value)" class="form">
+  <div class="p-field">
+    <label for="float-login">Логин</label><br>
+    <input id="float-login" class="input" type="text" pInputText formControlName="login">
+
+  </div>
+  <div class="p-field">
+    <label for="float-name">ФИО</label><br>
+    <input id="float-name" class="input" type="text" pInputText formControlName="fullName">
+
+  </div>
+  <div class="p-field">
+    <label for="float-password">Пароль</label><br>
+    <input id="float-password" class="input" type="password" pInputText formControlName="password">
+  </div>
+  <label>Выберите факультет</label><br>
+  <p-dropdown [options]="faculties" formControlName="faculty" optionLabel="name" [showClear]="true" placeholder="Выберите факультет"></p-dropdown>
+  <button pButton pRipple label="Сохранить" class="p-button-raised" type="submit"></button>
+</form>

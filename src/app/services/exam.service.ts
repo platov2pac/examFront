@@ -42,6 +42,9 @@ export class ExamService {
     return this.http.post("http://localhost:8080/professor/finishExam");
   }
 
+  getAllExam():Observable<Exam[]>{
+    return this.http.get<Exam[]>("http://localhost:8080/admin/getExam");
+  }
   constructor(private http: HttpClient) {
   }
 }

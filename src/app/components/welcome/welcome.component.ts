@@ -11,12 +11,26 @@ import {Router} from "@angular/router";
 })
 export class WelcomeComponent implements OnInit {
   role!: string | null;
+  examStart: boolean = true;
 
-  constructor() {
+  constructor(private examService: ExamService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.role = localStorage.getItem("roleName");
+    if (this.role !== 'ROLE_ADMIN') {
+      this.examService.getExam().subscribe(exam => {
+
+        if (exam.finish) {
+          this.router.navigate(['enteredUser'])
+        }
+
+      }, error => {
+        if (error.status === 400) {
+          this.examStart = false;
+        }
+      })
+    }
   }
 
 

@@ -36,9 +36,8 @@ export class StudentComponent implements OnInit {
       this.examQuestion = exam.question;
       this.examService.getAnswerForStudent().subscribe(answer => {
           this.questionAnswered = answer.answered
-          console.log(this.questionAnswered)
           if (answer.answered) {
-            this.answer = answer.value;
+            this.router.navigate(['enteredUser'])
           }
         },
         (err: HttpErrorResponse) => {

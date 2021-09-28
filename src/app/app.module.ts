@@ -7,7 +7,7 @@ import {RouterModule} from "@angular/router";
 import {LoginComponent} from './components/login/login.component';
 import {RippleModule} from "primeng/ripple";
 import {InputTextModule} from "primeng/inputtext";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import {MessagesModule} from "primeng/messages";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -19,16 +19,19 @@ import {InputTextareaModule} from "primeng/inputtextarea";
 import {UserService} from "./services/user.service";
 import {RequestInterceptor} from "./interceptors/request.interceptor";
 import {ExamService} from "./services/exam.service";
-import { EnteredTableComponent } from './components/entered-table/entered-table.component';
+import {EnteredTableComponent} from './components/entered-table/entered-table.component';
 import {TableModule} from "primeng/table";
-import { StudentComponent } from './components/welcome/student/student.component';
-import { ProfessorComponent } from './components/welcome/professor/professor.component';
-import { AsnwerGradComponent } from './components/answer-grad/asnwer-grad.component';
+import {StudentComponent} from './components/welcome/student/student.component';
+import {ProfessorComponent} from './components/welcome/professor/professor.component';
+import {AsnwerGradComponent} from './components/answer-grad/asnwer-grad.component';
 import {PanelModule} from "primeng/panel";
 import {ScrollPanelModule} from "primeng/scrollpanel";
 import {RatingModule} from "primeng/rating";
 import {InputNumberModule} from "primeng/inputnumber";
-
+import {AdminComponent} from './components/welcome/admin/admin.component';
+import {DropdownModule} from "primeng/dropdown";
+import {ExamTableComponent} from './components/exam-table/exam-table.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 
 @NgModule({
@@ -42,6 +45,9 @@ import {InputNumberModule} from "primeng/inputnumber";
     StudentComponent,
     ProfessorComponent,
     AsnwerGradComponent,
+    AdminComponent,
+    ExamTableComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +56,7 @@ import {InputNumberModule} from "primeng/inputnumber";
       {path: 'login', component: LoginComponent},
       {path: 'welcome', component: WelcomeComponent},
       {path: 'enteredUser', component: EnteredTableComponent},
+      {path: 'examTable', component: ExamTableComponent}
     ]),
     RippleModule,
     ButtonModule,
@@ -63,9 +70,11 @@ import {InputNumberModule} from "primeng/inputnumber";
     PanelModule,
     ScrollPanelModule,
     RatingModule,
-    InputNumberModule
+    InputNumberModule,
+    DropdownModule,
+    ReactiveFormsModule
   ],
-  providers: [UserService,ExamService, {
+  providers: [UserService, ExamService, {
     provide: HTTP_INTERCEPTORS,
     useClass: RequestInterceptor,
     multi: true

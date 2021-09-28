@@ -3,7 +3,13 @@
   height: 10vh;
   flex-grow: 2;
   background-color: #dcdcdc;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
-app-header{
+
+.p-button-raised{
+  margin: 0 5vw;
 
 }

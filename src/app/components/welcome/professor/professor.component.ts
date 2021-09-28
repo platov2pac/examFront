@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../../dto/user";
 import {UserService} from "../../../services/user.service";
-import {DialogService, DynamicDialogRef} from 'primeng/dynamicdialog';
+import {DialogService} from 'primeng/dynamicdialog';
 import {AsnwerGradComponent} from "../../answer-grad/asnwer-grad.component";
 import {ExamService} from "../../../services/exam.service";
 import {Router} from "@angular/router";
@@ -58,5 +58,6 @@ export class ProfessorComponent implements OnInit {
     this.userService.getNotAnsweredUsers().subscribe(users =>
       this.notAnsweredUsers = users)
   }
+
 
 }

@@ -1,1 +1,9 @@
-<div class="header"></div>
+<div class="header">
+  <div [hidden]="role==='ROLE_STUDENT'">
+    <button pButton pRipple type="button" label="{{descOfFirstButton}}" class="p-button-raised" (click)="clickFirst()"></button>
+  </div>
+  <div [hidden]="role==='ROLE_STUDENT'">
+    <button pButton pRipple type="button" label="{{descOfSecondButton}}" class="p-button-raised" (click)="clickSecond()"></button>
+  </div>
+  <button pButton pRipple type="button" label="Выход" class="p-button-raised" (click)="logout()"></button>
+</div>
